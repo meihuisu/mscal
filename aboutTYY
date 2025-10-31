@@ -83,6 +83,13 @@ CenCalTYY datafile is in netcdf-4 with very basic structure
        varq = interpn(points, vari, pointq, method='linear', bounds_error=False, fill_value=np.nan)
      and varq is fished out out of vs/vp/rho block of data in .nc file
 
+--
+
+A C++ library that is similar to scipy.interpolate,
+https://www.alglib.net/interpolation/fastrbf.php
+using Radial Basis Function (RBF) model
+with a C wrapper
+
 
 
 
