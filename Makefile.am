@@ -13,4 +13,3 @@ AM_CFLAGS = -O2
 
 # Include path if needed
 INCLUDES = -I$(srcdir)/alglib
-

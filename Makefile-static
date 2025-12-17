@@ -1,5 +1,0 @@
-g++ -c alglib/interpolation.cpp -o interpolation.o
-ar rcs libalglib.a interpolation.o
-
-g++ main.o rbf_wrapper.o -L. -lalglib -o rbf_app
-

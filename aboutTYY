@@ -1,4 +1,6 @@
 
+https://www.alglib.net/interpolation/fastrbf.php
+
 *** netcdf-4 is different from hdf5
 
 netcdf-4 is simpler data model(dims,variables,attributes) with group and user-defined type

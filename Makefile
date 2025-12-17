@@ -1,11 +1,11 @@
 
 CXX = g++
 CC = gcc
-CXXFLAGS = -O2 -std=c++11
+CXXFLAGS = -Idependencies/alglib-cpp/src -O2 -std=c++11
 CFLAGS = -O2
 
-ALGLIB_SRC = alglib/interpolation.cpp
-WRAPPER_SRC = alglib_rbf_wrapper.cpp
+ALGLIB_SRC = dependencies/alglib-cpp/src/interpolation.cpp
+WRAPPER_SRC = alglib_rbf_wrapper.C
 C_SRC = main.c
 
 OBJS = interpolation.o rbf_wrapper.o main.o
@@ -13,16 +13,16 @@ OBJS = interpolation.o rbf_wrapper.o main.o
 all: rbf_app
 
 interpolation.o: $(ALGLIB_SRC)
-    $(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 rbf_wrapper.o: $(WRAPPER_SRC)
-    $(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 main.o: $(C_SRC)
-    $(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 rbf_app: $(OBJS)
-    $(CXX) $(OBJS) -o $@
+	$(CXX) $(OBJS) -o $@
 
 clean:
-    rm -f *.o rbf_app
+	rm -f *.o rbf_app
