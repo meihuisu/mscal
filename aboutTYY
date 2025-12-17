@@ -92,5 +92,12 @@ with a C wrapper
 
 
 
+#####################
+
+Plan,
+
+1) get non-parallel netcdf-4 and hdf5 stack working on UCVM
+2) tyy code with embedded alglib and ucvm wrapper
+
 
 
