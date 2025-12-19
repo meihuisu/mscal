@@ -1,0 +1,9 @@
+# UTM Zone
+utm_zone = 10
+
+# Model directory
+model_dir = mscal
+model_data_path  = https://g-3a9041.a78b8.36fe.data.globus.org/ucvm/models
+
+# interpolation on or off?
+interpolation = off 

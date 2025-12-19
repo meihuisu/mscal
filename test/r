@@ -1,0 +1,9 @@
+
+#g++ -c dependencies/alglib-cpp/src/interpolation.cpp -o interpolation.o
+g++ -Idependencies/alglib-cpp/src -c alglib_rbf_wrapper.cpp -o alglib_rbf_wrapper.cpp.o
+#ar rcs libalglib.a interpolation.o alglib_rbf_wrapper.o
+
+gcc -Idependencies/alglib-cpp/src use_alglib.c -o use_alglib.o
+
+#g++ use_alglib.o rbf_wrapper.o -L. -lalglib -o rbf_app
+
