@@ -1,11 +1,11 @@
 # Autoconf/automake file
 
 # General compiler/linker flags
-AM_CFLAGS = ${CFLAGS} ${ETREE_INCLUDES} ${PROJ_INCLUDES}
-AM_LDFLAGS = ${LDFLAGS} ${ETREE_LDFLAGS} ${PROJ_LDFLAGS} -lm
+AM_CFLAGS = ${CFLAGS} 
+AM_LDFLAGS = ${LDFLAGS} -lm
 
 
-TARGETS = libcs248.a libcs248.so
+TARGETS = libmscal.a libmscal.so
 
 all: $(TARGETS)
 
@@ -13,23 +13,23 @@ install:
 	mkdir -p ${prefix}
 	mkdir -p ${prefix}/lib
 	mkdir -p ${prefix}/include
-	cp libcs248.so ${prefix}/lib
-	cp libcs248.a ${prefix}/lib
-	cp cs248.h ${prefix}/include
+	cp libmscal.so ${prefix}/lib
+	cp libmscal.a ${prefix}/lib
+	cp mscal.h ${prefix}/include
 
 clean:
 	rm -rf $(TARGETS)
 	rm -rf *.o
 
-libcs248.a: cs248_static.o
+libmscal.a: mscal_static.o
 	$(AR) rcs $@ $^
 
-libcs248.so: cs248.o 
-	$(CC) -shared $(AM_FCFLAGS) -o libcs248.so $^ $(AM_LDFLAGS)
+libmscal.so: mscal.o 
+	$(CC) -shared $(AM_FCFLAGS) -o libmscal.so $^ $(AM_LDFLAGS)
 
-cs248.o: cs248.c
+mscal.o: mscal.c
 	$(CC) -fPIC -DDYNAMIC_LIBRARY -o $@ -c $^ $(AM_CFLAGS)
 
-cs248_static.o: cs248.c
+mscal_static.o: mscal.c
 	$(CC) -o $@ -c $^ $(AM_CFLAGS)
 
